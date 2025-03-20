@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weapon Detection UI</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="containers">
+        <div class="content">
+            <main class="main-content">
+                <div class="heading-text">
+                    <h1>WEAPON DETECTION SYS</h1>
+                </div>
+                <div class="video-container"  id="media-container">
+                    <video src="videoplayback.mp4" controls autoplay loop muted></video>
+                </div>
+            </main>
+            <div class="sidebar">
+            <div class="top-bar">
+                <div class="output-container">
+                    <div class="graph recall-graph">
+                        <div class="fill" id="recall-fill"></div>
+                    </div>
+                    <span>Recall: <b id="recall">0.92%</b></span>
+                </div>
+                <div class="output-container">
+                    <div class="graph precision-graph">
+                        <div class="fill" id="precision-fill"></div>
+                    </div>
+                    <span>Precision: <b id="precision">0.92%</b></span>
+                </div>
+                <div class="output-container">
+                    <div class="graph f1-score-graph">
+                        <div class="fill" id="f1-score-fill"></div>
+                    </div>
+                    <span>F1 Score: <b id="f1-score">0.92%</b></span>
+                </div>
+            </div>
+                <div class="settings-panel">
+                    <div class="panel">
+                        <label>Confidence Threshold</label>
+                        <input type="range" min="0" max="100" value="50">
+                    </div>
+                    <div class="panel">
+                        <label>Overlap Threshold</label>
+                        <input type="range" min="0" max="100" value="50">
+                    </div>
+                    <div class="upload-section">
+                        <label for="file" class="upload-label">
+                            <i class="fas fa-upload"></i>
+                        </label>
+                        <span>Select File</span>
+                        <input type="file" accept="image/*,video/*" id="file" hidden>
+                    </div>
+                    <div class="toggle webcam-toggle">
+                        <span>WebCam Mode</span>
+                        <div class="toggle-btn-container">
+                            <button class="toggle-btn active">ON</button>
+                            <button class="toggle-btn off">OFF</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+
+</html>
